@@ -30,6 +30,7 @@ bert_tokenizer = BertTokenizer.from_pretrained(BERT_NAME)
 bert_model = BertModel.from_pretrained(BERT_NAME)
 sentiment_model = BertClassifier(bert_model,num_classes=3)
 sentiment_model.load_state_dict(torch.load(MODEL_PATH,map_location=device))
+sentiment_model.to(device)
 sentiment_model.eval()
 
 def topic_sentiment_classification(text:str):
