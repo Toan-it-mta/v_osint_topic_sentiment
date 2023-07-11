@@ -1,18 +1,18 @@
-# Các bước sử dụng Phân tích cảm xúc Version 2#
+# Các bước sử dụng Phân tích cảm xúc Version 2
 
 - Hướng dẫn cài đặt các thư viện để chạy được mô hình Phân tích cảm xúc Version 2
 
-# 1. Clone Project#
+# 1. Clone Project
 
 - **Chạy câu lệnh:** git clone https://github.com/Toan-it-mta/v_osint_topic_sentiment.git
 
-# 2. Hướng dẫn Download Mô Hình và cài đặt các thư viện cần thiết#
+# 2. Hướng dẫn Download Mô Hình và cài đặt các thư viện cần thiết
 
-## 2.1. Cài thư viện:##
+## 2.1. Cài thư viện:
 
 - **Chạy câu lệnh:** pip install -r ./requirements.txt
 
-## 2.2. Download mô hình:##
+## 2.2. Download mô hình:
 
 - **Chạy câu lệnh:** cd v_osint_toppic_sentiment
 - **Chạy câu lệnh:** python download_model
