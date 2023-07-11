@@ -1,0 +1,6 @@
+v_osint_topic_sentiment/models/*.pt
+__pycache__/*
+*.json
+.vscode/*
+*.log
+files_upload/*
