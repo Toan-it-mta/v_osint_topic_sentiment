@@ -15,7 +15,7 @@
 ## 2.2. Download mô hình:
 
 - **Chạy câu lệnh:** cd v_osint_toppic_sentiment
-- **Chạy câu lệnh:** python download_model
+- **Chạy câu lệnh:** python download_model.py
 
 # 3. Hướng dẫn sử dụng thư viện
 
