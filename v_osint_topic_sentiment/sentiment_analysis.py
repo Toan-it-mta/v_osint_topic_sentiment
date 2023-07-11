@@ -33,7 +33,8 @@ sentiment_model.load_state_dict(torch.load(MODEL_PATH,map_location=device))
 sentiment_model.to(device)
 sentiment_model.eval()
 
-def topic_sentiment_classification(text:str):
+def topic_sentiment_classification(title="",description="",content=""):
+    text = title+'\n'+description+'\n'+content
     with torch.no_grad():           
         sentences_ids ,sentences_mask, num_sent = preprocess(bert_tokenizer,text,MAX_WORD_LENGTH, MAX_SENT_LENGTH)
         logits = sentiment_model(sentences_ids,sentences_mask,num_sent)
@@ -42,6 +43,6 @@ def topic_sentiment_classification(text:str):
     label_pred = LABEL_MAPPING[index_pred]
     result = {}
     result['sentiment_label'] = label_pred
-    # result['topic_label'] = "unknow"
     return result
 
+    
