@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
 if torch.cuda.is_available():
-    device = torch.device("cuda")
+    device = torch.device("cuda:0")
 else:
     device = torch.device("cpu")
 

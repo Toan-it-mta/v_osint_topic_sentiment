@@ -5,7 +5,7 @@ from torch import nn
 import torch.nn.functional as F
 
 if torch.cuda.is_available():
-    device = torch.device("cuda")
+    device = torch.device("cuda:0")
 else:
     device = torch.device("cpu")
 

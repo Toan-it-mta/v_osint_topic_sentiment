@@ -10,6 +10,7 @@
 
 ## 2.1. Cài thư viện:
 
+- **Chạy câu lệnh:** cd v_osint_toppic_sentiment
 - **Chạy câu lệnh:** pip install -r ./requirements.txt
 
 ## 2.2. Download mô hình:
