@@ -1,10 +1,10 @@
 import torch
 from transformers import BertModel, BertTokenizer
-from src.BertClassifier import BertClassifier
 import numpy as np
 import nltk
 import warnings 
-from src.utils import preprocess
+from .src.BertClassifier import BertClassifier
+from .src.utils import preprocess
 nltk.download('punkt')
 
 warnings.filterwarnings("ignore")
@@ -15,7 +15,7 @@ if torch.cuda.is_available():
 else:
     device = torch.device("cpu")
 
-MODEL_PATH ="./models/bert_best_model.pt"
+MODEL_PATH ="./v_osint_topic_sentiment/models/bert_best_model.pt"
 BERT_NAME ="NlpHUST/vibert4news-base-cased"
 MAX_SENT_LENGTH = 100
 MAX_WORD_LENGTH = 100
@@ -44,9 +44,4 @@ def topic_sentiment_classification(text:str):
     result['sentiment_label'] = label_pred
     # result['topic_label'] = "unknow"
     return result
-
-if __name__ == "__main__":
-    text = """Người đứng đầu Bộ Quốc phòng tuyên bố rằng một thoả thuận hợp tác về mua sắm quốc phòng sẽ được ký với Bộ trưởng Quốc phòng Hoa Kỳ Lloyd Austin trong cuộc họp của họ vào thứ Sáu."""
-    predict_out = topic_sentiment_classification(text)
-    print(predict_out)
 

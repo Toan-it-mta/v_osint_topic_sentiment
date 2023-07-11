@@ -1,4 +1,6 @@
 v_osint_topic_sentiment/models/*.pt
+v_osint_topic_sentiment/src/__pycache__/*
+v_osint_topic_sentiment/__pycache__/*
 __pycache__/*
 *.json
 .vscode/*

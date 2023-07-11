@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
 from v_osint_topic_sentiment.sentiment_analysis import topic_sentiment_classification
 import uvicorn
@@ -12,10 +11,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost",
-    "http://localhost:4200",
-    "http://api.aiacademy.edu.vn",
-    "192.168.1.58:8002",
-    "192.168.1.58"
+    "http://localhost:8002",
 ]
 
 app.add_middleware(
@@ -64,7 +60,7 @@ async def topic_sentiment_analysis(obj_input: Item):
         str_log["label"] = result
         str_log = json.dumps(str_log)
         logging.info(str_log)
-        return on_success([result['sentiment_label'],result['topic_label']])
+        return on_success(result['sentiment_label'])
     except Exception as err:
         return on_fail(err)
     
